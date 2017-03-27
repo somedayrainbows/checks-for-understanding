@@ -5,6 +5,10 @@ Fork this respository. Answer the questions to the best of your ability. Try to 
 Note: When you're done, submit a PR.
 
 1. At a high level, what is ActiveRecord? What does it do/allow you to do?
+```
+AR is a ruby library used to interact with relational databases like SQL using a bunch of built-in methods.
+```
+
 2. Assume you have the following model:
 
 ```ruby
@@ -14,7 +18,22 @@ end
 
 What are some methods you can call on `Team`? If these methods aren't defined in the class, how do you have access to them?
 
+```
+Team.find_or_create_by()
+Team.find_by()
+Team.create
+Team.new & Team.save
+Team.destroy
+Team.update
+
+They are built-in ActiveRecord methods.
+```
+
 3. Assume that in your database, a team has the following attributes: "id", "name", owner_id". How would you find the name of a team with an id of 4? Assuming your class only included the code from question 2, how could you find the owner of the same team?
+```
+Team.find(4)
+Team.find(4).owner_id
+```
 
 4. Assume that you added a line to your `Team` class as follows:
 
@@ -25,6 +44,9 @@ end
 ```
 
 Now how would you find the owner of the team with an id of 4?
+```
+Team.find(4).owner
+```
 
 5. In a database that's holding students and teachers, what will be the relationship between students and teachers? Draw the schema diagram.
 6. Define foreign key, primary key, and schema.
